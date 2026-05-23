@@ -3,7 +3,7 @@ import numpy as np
 import imutils
 import math
 
-# === ДОБАВЛЕНО ДЛЯ MQTT ===
+# === ДЛЯ MQTT ===
 import paho.mqtt.client as mqtt
 
 # Подключение к локальному mosquitto-брокеру.
@@ -17,8 +17,6 @@ MQTT_TOPIC = "sky/state"
 # === /MQTT ===
 
 
-# (здесь были закомментированные эксперименты друга — оставляем как есть)
-
 
 class SunDetector:
 
@@ -30,8 +28,6 @@ class SunDetector:
 
         shot = 0
         count = 0
-        # Запоминаем последнее отправленное состояние, чтобы не спамить
-        # брокер одинаковыми сообщениями каждую секунду
         last_sent = None
 
         while True:
